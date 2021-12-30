@@ -1,4 +1,4 @@
-name: Octo Organization CI
+name: Firebolt Security Scan
 
 on:
   workflow_dispatch:

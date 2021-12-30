@@ -1,0 +1,5 @@
+{
+    "name": "Firebolt Security Scan",
+    "description": "Workflow to scan for security vulnerabilities with Fossa and SonarCloud",
+    "iconName": "example-icon"
+}
