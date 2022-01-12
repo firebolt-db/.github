@@ -2,34 +2,20 @@ name: Firebolt Security Scan
 
 on:
   workflow_dispatch:
+  pull_request:
   push:
     branches: [ $default-branch ]
 
 jobs:
-  fossa-scan:
+  security-scan:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout Code"
         uses: actions/checkout@v2
 
-      - name: "Run FOSSA Scan"
-        uses: fossas/fossa-action@v1.1.0
+      - name: "Security Scan"
+        uses: firebolt-db/action-security-scan@main
         with:
-          api-key: ${{secrets.fossaApiKey}}
-
-      - name: "Run FOSSA Test"
-        uses: fossas/fossa-action@v1.1.0
-        with:
-          api-key: ${{secrets.fossaApiKey}}
-          run-tests: true
-  sonar-scan:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Checkout Code"
-        uses: actions/checkout@v2
-
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v1.6
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          github-key: ${{ secrets.GITHUB_TOKEN }}
+          fossa-key: ${{ secrets.FOSSA_TOKEN }}
+          sonar-key: ${{ secrets.SONARCLOUD_TOKEN }}
