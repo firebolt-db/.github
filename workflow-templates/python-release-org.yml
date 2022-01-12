@@ -11,17 +11,15 @@ on:
         description: 'Trigger a major release (optional). Leave empty for regular release.'
 
 jobs:
-  integration-tests:
-    uses: firebolt-db/firebolt-python-sdk/.github/workflows/integration-tests.yml@main
-    secrets:
-      FIREBOLT_USERNAME: ${{ secrets.FIREBOLT_USERNAME }}
-      FIREBOLT_PASSWORD: ${{ secrets.FIREBOLT_PASSWORD }}
+  # integration-tests:
+  # It is highly suggested to add an integration test job here and publish
+  #  only on its success.
 
   publish:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    needs: integration-tests
+    # needs: integration-tests
     steps:
     - name: Check out code
       uses: actions/checkout@v2
