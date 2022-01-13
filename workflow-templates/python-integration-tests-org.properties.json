@@ -1,0 +1,5 @@
+{
+    "name": "Firebolt Python Integration Tests",
+    "description": "Workflow to run integration tests on demand",
+    "iconName": "favicon"
+}
