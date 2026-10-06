@@ -1,5 +1,0 @@
-{
-    "name": "Firebolt Python Release",
-    "description": "Workflow to release a Python project on Pypi and Github Releases",
-    "iconName": "favicon"
-}
