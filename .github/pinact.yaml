@@ -8,4 +8,3 @@ ignore_actions:
 files:
   - pattern: .github/workflows/*.yml
   - pattern: .github/workflows/*.yaml
-  - pattern: workflow-templates/*.yml
